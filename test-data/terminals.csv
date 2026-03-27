@@ -1,0 +1,3 @@
+terminal_id,location,status,merchant_id
+TERM0001,Store1,ACTIVE,MERCH001
+TERM0002,Store2,ACTIVE,MERCH002
