@@ -1,0 +1,53 @@
+[
+  {
+    "flow": "Authorization Approved",
+    "request": {
+      "mti": "0100",
+      "pan": "541333******1111",
+      "processing_code": "000000",
+      "amount": "000000001500",
+      "stan": "123456",
+      "terminal_id": "TERM0001",
+      "merchant_id": "MERCH001"
+    },
+    "response": {
+      "mti": "0110",
+      "response_code": "00",
+      "approval_code": "A12345",
+      "stan": "123456"
+    }
+  },
+  {
+    "flow": "Authorization Declined",
+    "request": {
+      "mti": "0100",
+      "pan": "541333******2222",
+      "processing_code": "000000",
+      "amount": "000000005000",
+      "stan": "123457",
+      "terminal_id": "TERM0002",
+      "merchant_id": "MERCH002"
+    },
+    "response": {
+      "mti": "0110",
+      "response_code": "05",
+      "approval_code": "",
+      "stan": "123457"
+    }
+  },
+  {
+    "flow": "Timeout then Reversal",
+    "request": {
+      "mti": "0400",
+      "original_stan": "123458",
+      "amount": "000000002500",
+      "terminal_id": "TERM0003",
+      "merchant_id": "MERCH003"
+    },
+    "response": {
+      "mti": "0410",
+      "response_code": "00",
+      "stan": "123459"
+    }
+  }
+]

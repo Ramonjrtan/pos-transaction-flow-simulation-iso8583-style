@@ -1,0 +1,69 @@
+{
+  "info": {
+    "name": "POS Transaction Flow Simulation (ISO8583-style)",
+    "_postman_id": "pos-qa-collection-001",
+    "description": "Simulated payment transaction flows including authorization and reversal",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Authorization Request (0100)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/authorization",
+          "host": ["{{base_url}}"],
+          "path": ["authorization"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"mti\": \"0100\",\n  \"pan\": \"541333******1111\",\n  \"processing_code\": \"000000\",\n  \"amount\": \"000000001500\",\n  \"stan\": \"123456\",\n  \"terminal_id\": \"TERM0001\",\n  \"merchant_id\": \"MERCH001\"\n}"
+        }
+      },
+      "response": [
+        {
+          "name": "Approved Response (0110)",
+          "originalRequest": {},
+          "status": "OK",
+          "code": 200,
+          "body": "{\n  \"mti\": \"0110\",\n  \"response_code\": \"00\",\n  \"approval_code\": \"A12345\",\n  \"stan\": \"123456\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Reversal Request (0400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/reversal",
+          "host": ["{{base_url}}"],
+          "path": ["reversal"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"mti\": \"0400\",\n  \"original_stan\": \"123456\",\n  \"amount\": \"000000001500\",\n  \"terminal_id\": \"TERM0001\",\n  \"merchant_id\": \"MERCH001\"\n}"
+        }
+      },
+      "response": [
+        {
+          "name": "Reversal Approved (0410)",
+          "status": "OK",
+          "code": 200,
+          "body": "{\n  \"mti\": \"0410\",\n  \"response_code\": \"00\",\n  \"stan\": \"123457\"\n}"
+        }
+      ]
+    }
+  ]
+}
