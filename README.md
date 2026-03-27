@@ -134,6 +134,16 @@ Each test case follows a structured format:
 
 ---
 
+## 🔐 Security & Compliance
+
+This project includes validation scenarios aligned with PCI-style expectations:
+* Sensitive data handling
+* Transaction logging validation
+* Duplicate and fraud-related scenarios
+* Audit trail verification
+
+---
+
 ### ⚙️ QA Techniques Demonstrated
 
 * End-to-end transaction validation
@@ -199,6 +209,6 @@ This project demonstrates how I:
 
 ## 🧾 Disclaimer
 
-This is a **QA simulation portfolio project** inspired by real-world payment systems and ISO8583-style messaging.
+This is a QA portfolio project inspired by real-world POS, payment gateway, and transaction processing systems that handle high-volume financial transactions using ISO8583-style messaging.
 
-It is intended to demonstrate structured testing, transaction lifecycle understanding, and QA strategy in fintech environments.
+It is designed to demonstrate how I approach testing in these environments, focusing on transaction lifecycle validation, data integrity, and end-to-end QA strategy.
