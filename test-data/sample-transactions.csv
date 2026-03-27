@@ -1,0 +1,3 @@
+transaction_id,stan,amount,status
+TXN001,123456,1500,APPROVED
+TXN002,123457,5000,DECLINED
