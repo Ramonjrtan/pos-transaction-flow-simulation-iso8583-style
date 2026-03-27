@@ -1,0 +1,61 @@
+[
+  {
+    "scenario": "Approved Purchase",
+    "request": {
+      "mti": "0100",
+      "pan": "541333******1111",
+      "processing_code": "000000",
+      "amount": "000000001500",
+      "transmission_datetime": "0327093000",
+      "stan": "123456",
+      "local_time": "093000",
+      "local_date": "0327",
+      "pos_entry_mode": "051",
+      "terminal_id": "TERM0001",
+      "merchant_id": "MERCH001"
+    },
+    "response": {
+      "mti": "0110",
+      "response_code": "00",
+      "approval_code": "A12345",
+      "stan": "123456"
+    }
+  },
+  {
+    "scenario": "Declined Purchase",
+    "request": {
+      "mti": "0100",
+      "pan": "541333******2222",
+      "processing_code": "000000",
+      "amount": "000000005000",
+      "transmission_datetime": "0327093500",
+      "stan": "123457",
+      "local_time": "093500",
+      "local_date": "0327",
+      "pos_entry_mode": "051",
+      "terminal_id": "TERM0002",
+      "merchant_id": "MERCH002"
+    },
+    "response": {
+      "mti": "0110",
+      "response_code": "05",
+      "approval_code": "",
+      "stan": "123457"
+    }
+  },
+  {
+    "scenario": "Timeout then Reversal",
+    "request": {
+      "mti": "0400",
+      "original_stan": "123458",
+      "amount": "000000002500",
+      "terminal_id": "TERM0003",
+      "merchant_id": "MERCH003"
+    },
+    "response": {
+      "mti": "0410",
+      "response_code": "00",
+      "stan": "123459"
+    }
+  }
+]
