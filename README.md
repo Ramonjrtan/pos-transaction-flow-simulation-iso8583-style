@@ -44,7 +44,7 @@ End-to-end validation of POS transaction workflows simulating ISO8583-style mess
 
 I help validate payment systems, POS flows, and transaction processing.
 
-👉 Message me for QA Audit
+👉 Message me for QA role
 
 ---
 
@@ -56,4 +56,3 @@ Includes:
 - Sample execution
 - QA guide
 
-👉 Gumroad: https://your-link-here.com
